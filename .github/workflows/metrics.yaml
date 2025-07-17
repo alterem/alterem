@@ -76,3 +76,11 @@ jobs:
           plugin_topics_sort: stars
           plugin_traffic: yes
           repositories_forks: yes
+
+      - name: Delete workflow runs
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+          token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          retain_days: 10
+          keep_minimum_runs: 6
